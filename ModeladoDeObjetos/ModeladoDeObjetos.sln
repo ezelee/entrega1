@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeladoDeObjetos", "ModeladoDeObjetos\ModeladoDeObjetos.csproj", "{2BF9ACA6-6FD2-44CE-9E54-A3A5E84BECCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BF9ACA6-6FD2-44CE-9E54-A3A5E84BECCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF9ACA6-6FD2-44CE-9E54-A3A5E84BECCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF9ACA6-6FD2-44CE-9E54-A3A5E84BECCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF9ACA6-6FD2-44CE-9E54-A3A5E84BECCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26EE4D2B-5094-443C-9BF1-14082785B101}
+	EndGlobalSection
+EndGlobal
