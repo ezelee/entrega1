@@ -19,7 +19,4 @@ namespace ModeladoDeObjetos
         
     }
 
-    enum Categoria
-    { ParteSuperior, ParteInferior, Calzado, Accesorio }
-
 }

@@ -18,10 +18,10 @@ namespace ModeladoDeObjetos
             List<Prenda> accesorios = new List<Prenda>();
             List<Prenda> calzados = new List<Prenda>();
 
-            partesSuperiores = Prendas.FindAll(EsParteSuperior);
-            partesInferiores = Prendas.FindAll(EsParteInferior);
-            accesorios = Prendas.FindAll(EsAccesorio);
-            calzados = Prendas.FindAll(EsCalzado);
+            //partesSuperiores = Prendas.FindAll(EsParteSuperior);
+            //partesInferiores = Prendas.FindAll(EsParteInferior);
+            //accesorios = Prendas.FindAll(EsAccesorio);
+            //calzados = Prendas.FindAll(EsCalzado);
 
             foreach (Prenda unaPrendaSuperior in partesSuperiores)
             {
@@ -47,52 +47,52 @@ namespace ModeladoDeObjetos
             return Atuendos;
         }
 
-        private bool EsCalzado(Prenda unaPrenda)
-        {
-            if (unaPrenda.Categoria == Categoria.Calzado)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool EsCalzado(Prenda unaPrenda)
+        //{
+        //    if (unaPrenda.Categoria == Categoria.Calzado)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        private bool EsAccesorio(Prenda unaPrenda)
-        {
-            if (unaPrenda.Categoria == Categoria.Accesorio)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool EsAccesorio(Prenda unaPrenda)
+        //{
+        //    if (unaPrenda.Categoria == Categoria.Accesorio)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        private bool EsParteInferior(Prenda unaPrenda)
-        {
-            if (unaPrenda.Categoria == Categoria.ParteInferior)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool EsParteInferior(Prenda unaPrenda)
+        //{
+        //    if (unaPrenda.Categoria == Categoria.ParteInferior)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        private bool EsParteSuperior(Prenda unaPrenda)
-        {
-            if (unaPrenda.Categoria == Categoria.ParteSuperior)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool EsParteSuperior(Prenda unaPrenda)
+        //{
+        //    if (unaPrenda.Categoria == Categoria.ParteSuperior)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

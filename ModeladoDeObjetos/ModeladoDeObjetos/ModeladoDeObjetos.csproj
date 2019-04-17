@@ -46,11 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Atuendo.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="Categoria.cs" />
     <Compile Include="Guardarropa.cs" />
     <Compile Include="Prenda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sistema.cs" />
+    <Compile Include="TipoPrenda.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

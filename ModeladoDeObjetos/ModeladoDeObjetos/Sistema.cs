@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.IO;
 
 namespace ModeladoDeObjetos
 {
@@ -22,28 +18,30 @@ namespace ModeladoDeObjetos
              * Luego hay que llamar a un usuario específico el método GenerarTodasSugerencias() para imprimir los atuendos
              * 
              */
-            /* public levantarJson()
-            {
-                Console.WriteLine("Iniciando");
-                var path = "tipoPrenda.json";
-                List<Prenda> listaPrenda = Parser.parsearJson(path);
-
-                foreach (Prenda p in listaPrenda)
-                {
-
-                    Console.WriteLine("descripcion: " + p.descripcion);
-                    Console.WriteLine("categoria: " + p.categoria);
-                    Console.WriteLine("tiposTelasPosibles : " + p.tiposTelasPosibles);
-
-
-                    Console.WriteLine("--------------------------------");
-
-                }*/
             Console.ReadKey();
         }
 
-            
+        public List<TipoPrenda> LevantarJson()
+        {
+            Console.WriteLine("Iniciando");
+            var path = "tipoPrenda.json";
+            List<TipoPrenda> tipoPrenda = new List<TipoPrenda>();
 
+            var json = System.IO.File.ReadAllText(path);
+
+            // PARSER MAGICO
+            tipoPrenda = JsonConvert.DeserializeObject<List<TipoPrenda>>(json);
+
+            foreach (TipoPrenda unTipo in tipoPrenda)
+            {
+                Console.WriteLine("descripcion: " + unTipo.Descripcion);
+                Console.WriteLine("categoria: " + unTipo.Categoria);
+
+                Console.WriteLine("--------------------------------");
+
+            };
+
+            return tipoPrenda;
         }
     }
-
+}
