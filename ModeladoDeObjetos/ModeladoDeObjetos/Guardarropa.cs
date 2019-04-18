@@ -8,9 +8,22 @@ namespace ModeladoDeObjetos
 {
     class Guardarropa
     {
+       public string identificacion;
         private List<Atuendo> Atuendos { get; set; }
         private List<Prenda> Prendas { get; set; }
-
+        /*public Guardarropa(string ident)
+        {
+            identificacion = ident;
+        }*/
+        
+       /* public string mostrarIdentificacion()
+        {
+            return identificacion;
+        }
+        public void AddPrenda(Prenda prenda)
+        {
+            Prendas.Add(prenda);
+        }*/
         public List<Atuendo> GenerarSugerencia()
         {
             List<Prenda> partesSuperiores = new List<Prenda>();

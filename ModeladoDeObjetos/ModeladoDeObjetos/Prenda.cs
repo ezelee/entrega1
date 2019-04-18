@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class Prenda
+    public class Prenda
     {
         public Categoria Categoria { get; set; }
-      
-        
-           /* public string descripcion;
-            public string categoria;
-            public List<string> tiposTelasPosibles { get; set; }
 
-           */
+
+        /* public string descripcion;
+         public string categoria;
+         public List<string> tiposTelasPosibles { get; set; }
+
+        */
+        public TipoPrenda tipo;
+        public string color;
+        public string tela;
+        public Prenda(TipoPrenda tip, string col, string te)
+        {
+            tipo = tip;
+            color = col;
+            tela = te;
+         }
         
     }
 

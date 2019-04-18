@@ -24,6 +24,7 @@ namespace ModeladoDeObjetos
              * Genero 
              */
             Guardarropa unGuardarropa = new Guardarropa();
+            
 
 
             /*
@@ -34,6 +35,23 @@ namespace ModeladoDeObjetos
              */
             Console.ReadKey();
         }
+       /* public Prenda BuscarEnTipoPrenda(string descripcion, string tela, string color)
+        {
+            try
+            {
+                if (tipoPrenda.Find(tip => tip.Descripcion == descripcion).validarColorYTela(color, tela))
+                {
+                    Prenda unaPrenda = new Prenda(tipoPrenda.Find(tip => tip.Descripcion == descripcion), color, tela);
+                    return unaPrenda;
+                }
+            }
+
+
+            catch
+            {
+                throw new Exception("No se pudo crear Prenda");
+            }
+        }*/
 
         public static List<TipoPrenda> LevantarJson()
         {
@@ -53,6 +71,8 @@ namespace ModeladoDeObjetos
 
             return tipoPrendas;
         }
+        
+        
     }
 
     public class TipoPrendaJson

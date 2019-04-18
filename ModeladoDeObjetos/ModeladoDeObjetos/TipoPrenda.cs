@@ -20,5 +20,10 @@ namespace ModeladoDeObjetos
             TiposTelasPosibles = tiposTelasPosibles;
             ColoresPosibles = coloresPosibles;
         }
+       
+        /*public bool validarColorYTela(string color, string tela)
+        {
+           return ColoresPosibles.Contains(color) && TiposTelasPosibles.Contains(tela);
+        }*/
     }
 }
