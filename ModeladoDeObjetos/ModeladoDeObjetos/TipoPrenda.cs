@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class TipoPrenda
+    public class TipoPrenda
     {
-        public String Descripcion { get; set; }
-        public Categoria Categoria { get; set; }
-        public List<String> TiposTelasPosibles { get; set; }
-        public List<String> ColoresPosibles { get; set; }
+        public String Descripcion { get; private set; }
+        public Categoria Categoria { get; private set; }
+        public List<String> TiposTelasPosibles { get; private set; }
+        public List<String> ColoresPosibles { get; private set; }
 
-        public bool ValidarColorYTela(String color, String tela)
+        public TipoPrenda(String descripcion, Categoria categoria, List<String> tiposTelasPosibles, List<String> coloresPosibles)
         {
-
-            return true;
+            Descripcion = descripcion;
+            Categoria = categoria;
+            TiposTelasPosibles = tiposTelasPosibles;
+            ColoresPosibles = coloresPosibles;
         }
     }
 }

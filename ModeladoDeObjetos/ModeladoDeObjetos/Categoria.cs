@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class Categoria
+    public class Categoria
     {
-        public String categoria { get; set; }
+        public String DescripcionCategoria { get; set; }
     }
 }

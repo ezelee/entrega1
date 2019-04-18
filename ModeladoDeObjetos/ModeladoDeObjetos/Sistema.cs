@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace ModeladoDeObjetos
 {
@@ -13,6 +15,18 @@ namespace ModeladoDeObjetos
             Console.WriteLine("Iniciando");
 
             /*
+             * Genero Tipos de Prendas
+             */
+            List<TipoPrenda> tipoPrenda = new List<TipoPrenda>();
+            tipoPrenda = LevantarJson();
+
+            /*
+             * Genero 
+             */
+            Guardarropa unGuardarropa = new Guardarropa();
+
+
+            /*
              * Acá generar prendas, guardarropas, usuarios, etc.
              * 
              * Luego hay que llamar a un usuario específico el método GenerarTodasSugerencias() para imprimir los atuendos
@@ -21,27 +35,36 @@ namespace ModeladoDeObjetos
             Console.ReadKey();
         }
 
-        public List<TipoPrenda> LevantarJson()
+        public static List<TipoPrenda> LevantarJson()
         {
             Console.WriteLine("Iniciando");
             var path = "tipoPrenda.json";
-            List<TipoPrenda> tipoPrenda = new List<TipoPrenda>();
+            List<TipoPrenda> tipoPrendas = new List<TipoPrenda>();
 
             var json = System.IO.File.ReadAllText(path);
+            RootObject objetoJson = JsonConvert.DeserializeObject<RootObject>(json);
 
-            // PARSER MAGICO
-            tipoPrenda = JsonConvert.DeserializeObject<List<TipoPrenda>>(json);
-
-            foreach (TipoPrenda unTipo in tipoPrenda)
+            foreach (TipoPrendaJson unTipo in objetoJson.TipoPrenda)
             {
-                Console.WriteLine("descripcion: " + unTipo.Descripcion);
-                Console.WriteLine("categoria: " + unTipo.Categoria);
-
-                Console.WriteLine("--------------------------------");
-
+                Categoria categoria = new Categoria();
+                categoria.DescripcionCategoria = unTipo.Categoria;
+                TipoPrenda tipoPrenda = new TipoPrenda(unTipo.Descripcion, categoria, unTipo.TiposTelasPosibles.ToList(), unTipo.ColoresPosibles.ToList());
             };
 
-            return tipoPrenda;
+            return tipoPrendas;
         }
+    }
+
+    public class TipoPrendaJson
+    {
+        public String Descripcion { get; set; }
+        public String Categoria { get; set; }
+        public List<String> TiposTelasPosibles { get; set; }
+        public List<String> ColoresPosibles { get; set; }
+    }
+
+    public class RootObject
+    {
+        public List<TipoPrendaJson> TipoPrenda { get; set; }
     }
 }
