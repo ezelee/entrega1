@@ -8,6 +8,11 @@ namespace ModeladoDeObjetos
 {
     public class Categoria
     {
-        public String DescripcionCategoria { get; set; }
+        public string DescripcionCategoria; 
+        public string MostrarDescripcion()
+        {
+            return DescripcionCategoria;
+    }
     }
 }
+    

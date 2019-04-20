@@ -8,7 +8,7 @@ namespace ModeladoDeObjetos
 {
     public class Prenda
     {
-        public Categoria Categoria { get; set; }
+        public Categoria categoria;
 
 
         /* public string descripcion;
@@ -24,7 +24,12 @@ namespace ModeladoDeObjetos
             tipo = tip;
             color = col;
             tela = te;
+            categoria = tip.Categoria;
          }
+        public Categoria MostrarCategoria()
+        {
+            return categoria;
+        }
         
     }
 

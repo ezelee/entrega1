@@ -19,6 +19,7 @@ namespace ModeladoDeObjetos
             Categoria = categoria;
             TiposTelasPosibles = tiposTelasPosibles;
             ColoresPosibles = coloresPosibles;
+
         }
        
         /*public bool validarColorYTela(string color, string tela)

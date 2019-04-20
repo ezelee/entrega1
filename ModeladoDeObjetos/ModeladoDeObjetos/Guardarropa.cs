@@ -35,6 +35,37 @@ namespace ModeladoDeObjetos
             //partesInferiores = Prendas.FindAll(EsParteInferior);
             //accesorios = Prendas.FindAll(EsAccesorio);
             //calzados = Prendas.FindAll(EsCalzado);
+            /* void clasificarPrendas() //separa por categorias para luego poder crear atuendos
+         
+            {
+                calzados=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "calzado");
+                accesorios=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "accesorio");
+                partesInferiores=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "parte inferior");
+                partesSuperiores=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "parte superior");
+            }*/
+           /* void clasificarUnaPrenda(Prenda prenda)
+            {
+                if(prenda.MostrarCategoria().MostrarDescripcion()== "parte superior")
+
+                {
+                    partesSuperiores.Add(prenda);
+                }
+                if (prenda.MostrarCategoria().MostrarDescripcion() == "parte inferior")
+                {
+                    partesInferiores.Add(prenda);
+                }
+                if (prenda.MostrarCategoria().MostrarDescripcion() == "calzado")
+
+                {
+                    calzados.Add(prenda);
+                }
+                if (prenda.MostrarCategoria().MostrarDescripcion() == "accesorio")
+                {
+                    accesorios.Add(prenda);
+                }
+
+            }
+            */
 
             foreach (Prenda unaPrendaSuperior in partesSuperiores)
             {
