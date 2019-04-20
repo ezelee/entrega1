@@ -8,29 +8,28 @@ namespace ModeladoDeObjetos
 {
     public class Prenda
     {
-        public Categoria categoria;
+        private Categoria Categoria { get; set; }
+        private String Descripcion { get; set; }
+        private TipoPrenda Tipo { get; set; }
+        private String Color { get; set; }
+        private String Tela { get; set; }
 
-
-        /* public string descripcion;
-         public string categoria;
-         public List<string> tiposTelasPosibles { get; set; }
-
-        */
-        public TipoPrenda tipo;
-        public string color;
-        public string tela;
-        public Prenda(TipoPrenda tip, string col, string te)
+        public Prenda(TipoPrenda tipoPrenda, String color, String tela)
         {
-            tipo = tip;
-            color = col;
-            tela = te;
-            categoria = tip.Categoria;
-         }
-        public Categoria MostrarCategoria()
-        {
-            return categoria;
+            Tipo = tipoPrenda;
+            Color = color;
+            Tela = tela;
         }
-        
+        public bool EsDeCategoria(String unaDescripcionCategoria)
+        {
+            if (Categoria.MostrarDescripcion() == unaDescripcionCategoria)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
-
 }

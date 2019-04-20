@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class Usuario
+    public class Usuario
     {
         private List<Guardarropa> Guardarropas { get; set; }
 

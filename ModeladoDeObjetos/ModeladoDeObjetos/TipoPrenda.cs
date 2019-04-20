@@ -8,10 +8,10 @@ namespace ModeladoDeObjetos
 {
     public class TipoPrenda
     {
-        public String Descripcion { get; private set; }
-        public Categoria Categoria { get; private set; }
-        public List<String> TiposTelasPosibles { get; private set; }
-        public List<String> ColoresPosibles { get; private set; }
+        public String Descripcion { get; set; }
+        public Categoria Categoria { get; set; }
+        public List<String> TiposTelasPosibles { get; set; }
+        public List<String> ColoresPosibles { get; set; }
 
         public TipoPrenda(String descripcion, Categoria categoria, List<String> tiposTelasPosibles, List<String> coloresPosibles)
         {
@@ -19,12 +19,11 @@ namespace ModeladoDeObjetos
             Categoria = categoria;
             TiposTelasPosibles = tiposTelasPosibles;
             ColoresPosibles = coloresPosibles;
-
         }
-       
-        /*public bool validarColorYTela(string color, string tela)
+        
+        public bool ValidarColorYTela(String tela, String color)
         {
-           return ColoresPosibles.Contains(color) && TiposTelasPosibles.Contains(tela);
-        }*/
+           return TiposTelasPosibles.Contains(tela) && ColoresPosibles.Contains(color);
+        }
     }
 }

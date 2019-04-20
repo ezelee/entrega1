@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class Atuendo
+    public class Atuendo
     {
         public List<Prenda> Prendas { get; set; }
     }

@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace ModeladoDeObjetos
 {
-    class Sistema
+    public class Sistema
     {
         public List<Usuario> Usuarios { get; set; }
 
@@ -17,15 +16,30 @@ namespace ModeladoDeObjetos
             /*
              * Genero Tipos de Prendas
              */
-            List<TipoPrenda> tipoPrenda = new List<TipoPrenda>();
-            tipoPrenda = LevantarJson();
+            TipoPrendaController tipoPrendaController = new TipoPrendaController();
+            tipoPrendaController.LevantarJson();
 
             /*
-             * Genero 
+             * Genero Guardarropa
              */
             Guardarropa unGuardarropa = new Guardarropa();
-            
 
+            /*
+             * Genero Prenda
+             */
+            if (tipoPrendaController.ValidarColorYTela("remera de manga corta", "algodon", "rojo"))
+            {
+                TipoPrenda unTipoPrenda = tipoPrendaController.BuscarTipoPrenda("remera de manga corta");
+                Prenda unaPrenda = new Prenda(unTipoPrenda, "algodon", "rojo");
+                unGuardarropa.AgregarPrenda(unaPrenda);
+            }
+
+            if (tipoPrendaController.ValidarColorYTela("short", "cuero", "negro"))
+            {
+                TipoPrenda unTipoPrenda = tipoPrendaController.BuscarTipoPrenda("short");
+                Prenda unaPrenda = new Prenda(unTipoPrenda, "cuero", "negro");
+                unGuardarropa.AgregarPrenda(unaPrenda);
+            }
 
             /*
              * Acá generar prendas, guardarropas, usuarios, etc.
@@ -35,56 +49,7 @@ namespace ModeladoDeObjetos
              */
             Console.ReadKey();
         }
-       /* public Prenda BuscarEnTipoPrenda(string descripcion, string tela, string color)
-        {
-            try
-            {
-                if (tipoPrenda.Find(tip => tip.Descripcion == descripcion).validarColorYTela(color, tela))
-                {
-                    Prenda unaPrenda = new Prenda(tipoPrenda.Find(tip => tip.Descripcion == descripcion), color, tela);
-                    return unaPrenda;
-                }
-            }
 
-
-            catch
-            {
-                throw new Exception("No se pudo crear Prenda");
-            }
-        }*/
-
-        public static List<TipoPrenda> LevantarJson()
-        {
-            Console.WriteLine("Iniciando");
-            var path = "tipoPrenda.json";
-            List<TipoPrenda> tipoPrendas = new List<TipoPrenda>();
-
-            var json = System.IO.File.ReadAllText(path);
-            RootObject objetoJson = JsonConvert.DeserializeObject<RootObject>(json);
-
-            foreach (TipoPrendaJson unTipo in objetoJson.TipoPrenda)
-            {
-                Categoria categoria = new Categoria();
-                categoria.DescripcionCategoria = unTipo.Categoria;
-                TipoPrenda tipoPrenda = new TipoPrenda(unTipo.Descripcion, categoria, unTipo.TiposTelasPosibles.ToList(), unTipo.ColoresPosibles.ToList());
-            };
-
-            return tipoPrendas;
-        }
-        
-        
     }
 
-    public class TipoPrendaJson
-    {
-        public String Descripcion { get; set; }
-        public String Categoria { get; set; }
-        public List<String> TiposTelasPosibles { get; set; }
-        public List<String> ColoresPosibles { get; set; }
-    }
-
-    public class RootObject
-    {
-        public List<TipoPrendaJson> TipoPrenda { get; set; }
-    }
 }

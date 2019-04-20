@@ -6,66 +6,23 @@ using System.Threading.Tasks;
 
 namespace ModeladoDeObjetos
 {
-    class Guardarropa
+    public class Guardarropa
     {
-       public string identificacion;
+       //public string identificacion;
         private List<Atuendo> Atuendos { get; set; }
         private List<Prenda> Prendas { get; set; }
-        /*public Guardarropa(string ident)
-        {
-            identificacion = ident;
-        }*/
-        
-       /* public string mostrarIdentificacion()
-        {
-            return identificacion;
-        }
-        public void AddPrenda(Prenda prenda)
+        public void AgregarPrenda(Prenda prenda)
         {
             Prendas.Add(prenda);
-        }*/
+        }
         public List<Atuendo> GenerarSugerencia()
         {
-            List<Prenda> partesSuperiores = new List<Prenda>();
-            List<Prenda> partesInferiores = new List<Prenda>();
-            List<Prenda> accesorios = new List<Prenda>();
-            List<Prenda> calzados = new List<Prenda>();
+            List<Atuendo> atuendos = new List<Atuendo>();
 
-            //partesSuperiores = Prendas.FindAll(EsParteSuperior);
-            //partesInferiores = Prendas.FindAll(EsParteInferior);
-            //accesorios = Prendas.FindAll(EsAccesorio);
-            //calzados = Prendas.FindAll(EsCalzado);
-            /* void clasificarPrendas() //separa por categorias para luego poder crear atuendos
-         
-            {
-                calzados=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "calzado");
-                accesorios=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "accesorio");
-                partesInferiores=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "parte inferior");
-                partesSuperiores=Prendas.FindAll(p => p.MostrarCategoria().MostrarDescripcion() == "parte superior");
-            }*/
-           /* void clasificarUnaPrenda(Prenda prenda)
-            {
-                if(prenda.MostrarCategoria().MostrarDescripcion()== "parte superior")
-
-                {
-                    partesSuperiores.Add(prenda);
-                }
-                if (prenda.MostrarCategoria().MostrarDescripcion() == "parte inferior")
-                {
-                    partesInferiores.Add(prenda);
-                }
-                if (prenda.MostrarCategoria().MostrarDescripcion() == "calzado")
-
-                {
-                    calzados.Add(prenda);
-                }
-                if (prenda.MostrarCategoria().MostrarDescripcion() == "accesorio")
-                {
-                    accesorios.Add(prenda);
-                }
-
-            }
-            */
+            List<Prenda> partesSuperiores = Prendas.FindAll(p => p.EsDeCategoria("parte superior"));
+            List<Prenda> partesInferiores = Prendas.FindAll(p => p.EsDeCategoria("parte inferior"));
+            List<Prenda> accesorios = Prendas.FindAll(p => p.EsDeCategoria("accesorio"));
+            List<Prenda> calzados = Prendas.FindAll(p => p.EsDeCategoria("calzado"));
 
             foreach (Prenda unaPrendaSuperior in partesSuperiores)
             {
@@ -82,61 +39,14 @@ namespace ModeladoDeObjetos
                             unAtuendo.Prendas.Add(unAccesorio);
                             unAtuendo.Prendas.Add(unCalzado);
 
-                            Atuendos.Add(unAtuendo);
+                            atuendos.Add(unAtuendo);
                         }
                     }
                 }
             }
+            Atuendos = atuendos.ToList();
 
-            return Atuendos;
+            return atuendos;
         }
-
-        //private bool EsCalzado(Prenda unaPrenda)
-        //{
-        //    if (unaPrenda.Categoria == Categoria.Calzado)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //private bool EsAccesorio(Prenda unaPrenda)
-        //{
-        //    if (unaPrenda.Categoria == Categoria.Accesorio)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //private bool EsParteInferior(Prenda unaPrenda)
-        //{
-        //    if (unaPrenda.Categoria == Categoria.ParteInferior)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //private bool EsParteSuperior(Prenda unaPrenda)
-        //{
-        //    if (unaPrenda.Categoria == Categoria.ParteSuperior)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
     }
 }
