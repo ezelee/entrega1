@@ -9,13 +9,13 @@ namespace ModeladoDeObjetos
 {
     public class TipoPrendaController
     {
-        private List<TipoPrenda> TipoPrendas { get; set; }
+        private List<TipoPrenda> TipoPrendas { get; set; } = new List<TipoPrenda>();
 
         public bool ValidarColorYTela(String descripcion, String tela, String color)
         {
             TipoPrenda unTipo;
 
-            unTipo = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.Descripcion == descripcion);
+            unTipo = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.EsDeDescripcion(descripcion));
 
             if (unTipo.ValidarColorYTela(tela, color))
             {
@@ -28,13 +28,12 @@ namespace ModeladoDeObjetos
         }
         public TipoPrenda BuscarTipoPrenda(String descripcion)
         {
-            TipoPrenda tipoPrenda = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.Descripcion == descripcion);
+            TipoPrenda tipoPrenda = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.EsDeDescripcion(descripcion));
             return tipoPrenda;
         }
         public void LevantarJson()
         {
-            Console.WriteLine("Iniciando");
-            var path = "tipoPrenda.json";
+            var path = @"C:\Users\eze\Desktop\tipoPrenda2.json";
             List<TipoPrenda> tipoPrendas = new List<TipoPrenda>();
 
             var json = System.IO.File.ReadAllText(path);

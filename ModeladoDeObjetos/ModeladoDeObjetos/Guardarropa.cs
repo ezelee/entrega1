@@ -8,9 +8,9 @@ namespace ModeladoDeObjetos
 {
     public class Guardarropa
     {
-       //public string identificacion;
-        private List<Atuendo> Atuendos { get; set; }
-        private List<Prenda> Prendas { get; set; }
+        //public string identificacion;
+        private List<Atuendo> Atuendos { get; set; } = new List<Atuendo>();
+        private List<Prenda> Prendas { get; set; } = new List<Prenda>();
         public void AgregarPrenda(Prenda prenda)
         {
             Prendas.Add(prenda);
@@ -33,7 +33,7 @@ namespace ModeladoDeObjetos
                         foreach (Prenda unCalzado in calzados)
                         {
                             Atuendo unAtuendo = new Atuendo();
-
+                            
                             unAtuendo.Prendas.Add(unaPrendaSuperior);
                             unAtuendo.Prendas.Add(unaPrendaInferior);
                             unAtuendo.Prendas.Add(unAccesorio);

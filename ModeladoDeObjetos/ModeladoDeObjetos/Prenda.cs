@@ -8,7 +8,6 @@ namespace ModeladoDeObjetos
 {
     public class Prenda
     {
-        private Categoria Categoria { get; set; }
         private String Descripcion { get; set; }
         private TipoPrenda Tipo { get; set; }
         private String Color { get; set; }
@@ -22,14 +21,7 @@ namespace ModeladoDeObjetos
         }
         public bool EsDeCategoria(String unaDescripcionCategoria)
         {
-            if (Categoria.MostrarDescripcion() == unaDescripcionCategoria)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Tipo.EsDeCategoria(unaDescripcionCategoria);
         }
     }
 }

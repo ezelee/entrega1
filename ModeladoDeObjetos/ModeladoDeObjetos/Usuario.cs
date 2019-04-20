@@ -8,7 +8,7 @@ namespace ModeladoDeObjetos
 {
     public class Usuario
     {
-        private List<Guardarropa> Guardarropas { get; set; }
+        private List<Guardarropa> Guardarropas { get; set; } = new List<Guardarropa>();
 
         public List<List<Atuendo>> GenerarTodasSugerencias()
         {

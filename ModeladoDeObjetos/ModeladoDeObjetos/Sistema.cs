@@ -7,7 +7,7 @@ namespace ModeladoDeObjetos
 {
     public class Sistema
     {
-        public List<Usuario> Usuarios { get; set; }
+        public List<Usuario> Usuarios { get; set; } = new List<Usuario>();
 
         static void Main()
         {
@@ -31,6 +31,7 @@ namespace ModeladoDeObjetos
             {
                 TipoPrenda unTipoPrenda = tipoPrendaController.BuscarTipoPrenda("remera de manga corta");
                 Prenda unaPrenda = new Prenda(unTipoPrenda, "algodon", "rojo");
+                //Categoria parteSuperior = new Categoria("parte superior");
                 unGuardarropa.AgregarPrenda(unaPrenda);
             }
 
@@ -41,15 +42,29 @@ namespace ModeladoDeObjetos
                 unGuardarropa.AgregarPrenda(unaPrenda);
             }
 
+            if (tipoPrendaController.ValidarColorYTela("zapatos de tacón", "cuero", "negro"))
+            {
+                TipoPrenda unTipoPrenda = tipoPrendaController.BuscarTipoPrenda("zapatos de tacón");
+                Prenda unaPrenda = new Prenda(unTipoPrenda, "cuero", "negro");
+                unGuardarropa.AgregarPrenda(unaPrenda);
+            }
+
+            if (tipoPrendaController.ValidarColorYTela("pañuelo", "jersey", "verde"))
+            {
+                TipoPrenda unTipoPrenda = tipoPrendaController.BuscarTipoPrenda("pañuelo");
+                Prenda unaPrenda = new Prenda(unTipoPrenda, "jersey", "verde");
+                unGuardarropa.AgregarPrenda(unaPrenda);
+            }
+
             /*
              * Acá generar prendas, guardarropas, usuarios, etc.
              * 
              * Luego hay que llamar a un usuario específico el método GenerarTodasSugerencias() para imprimir los atuendos
              * 
              */
+            List<Atuendo> listaAtuendos = unGuardarropa.GenerarSugerencia();
+
             Console.ReadKey();
         }
-
     }
-
 }

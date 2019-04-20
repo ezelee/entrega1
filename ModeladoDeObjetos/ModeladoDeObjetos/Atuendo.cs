@@ -8,6 +8,6 @@ namespace ModeladoDeObjetos
 {
     public class Atuendo
     {
-        public List<Prenda> Prendas { get; set; }
+        public List<Prenda> Prendas { get; set; } = new List<Prenda>();
     }
 }

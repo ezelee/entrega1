@@ -18,5 +18,9 @@ namespace ModeladoDeObjetos
         {
             return DescripcionCategoria;
         }
+        public bool EsDeCategoria(String unaDescripcionCategoria)
+        {
+            return DescripcionCategoria == unaDescripcionCategoria;
+        }
     }
 }
