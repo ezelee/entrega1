@@ -32,5 +32,7 @@ namespace ModeladoDeObjetos
         {
             return Categoria.EsDeCategoria(unaDescripcionCategoria);
         }
+        public String ObtenerDescripcion() { return Descripcion; }
+        public String ObtenerCategoria() { return Categoria.ObtenerDescripcion(); }
     }
 }

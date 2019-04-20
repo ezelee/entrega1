@@ -11,20 +11,25 @@ namespace ModeladoDeObjetos
     {
         private List<TipoPrenda> TipoPrendas { get; set; } = new List<TipoPrenda>();
 
-        public bool ValidarColorYTela(String descripcion, String tela, String color)
+        public bool ValidarColorYTela(String descripcion, String tela, String colorPrimario, String colorSecundario = null)
         {
             TipoPrenda unTipo;
 
             unTipo = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.EsDeDescripcion(descripcion));
 
-            if (unTipo.ValidarColorYTela(tela, color))
-            {
-                return true;
-            }
-            else
+            if (!unTipo.ValidarColorYTela(tela, colorPrimario))
             {
                 return false;
             }
+
+            if (!String.IsNullOrEmpty(colorSecundario))
+            {
+                if (!unTipo.ValidarColorYTela(tela, colorSecundario))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         public TipoPrenda BuscarTipoPrenda(String descripcion)
         {

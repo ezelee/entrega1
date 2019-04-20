@@ -14,7 +14,7 @@ namespace ModeladoDeObjetos
         {
             DescripcionCategoria = unaCategoria;
         }
-        public String MostrarDescripcion()
+        public String ObtenerDescripcion()
         {
             return DescripcionCategoria;
         }

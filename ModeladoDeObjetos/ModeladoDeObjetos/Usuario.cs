@@ -21,10 +21,9 @@ namespace ModeladoDeObjetos
 
             return todasSugerencias;
         }
-        //La sig funcion es para ingresar una prenda, busca al guardarropas del usuario y agrega la prenda si cumple las condiciones de buscarentipodeprenda
-        /*public void ingresarPrendaASuGuardarropas(string identificacionG, string descripcion, string tela, string color)
+        public void AgregarGuardarropa(Guardarropa unGuardarropa)
         {
-             Guardarropas.Find(g =>identificacionG ==g.mostrarIdentificacion()).AddPrenda(Sistema.BuscarEnTipoPrenda( descripcion, tela, color);
-        }*/
+            Guardarropas.Add(unGuardarropa);
+        }
     }
 }
