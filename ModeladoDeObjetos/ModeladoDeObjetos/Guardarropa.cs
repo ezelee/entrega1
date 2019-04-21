@@ -11,10 +11,6 @@ namespace ModeladoDeObjetos
         //public string identificacion;
         private List<Atuendo> Atuendos { get; set; } = new List<Atuendo>();
         private List<Prenda> Prendas { get; set; } = new List<Prenda>();
-        public void AgregarPrenda(Prenda prenda)
-        {
-            Prendas.Add(prenda);
-        }
         public List<Atuendo> GenerarSugerencia()
         {
             List<Atuendo> atuendos = new List<Atuendo>();
@@ -47,6 +43,14 @@ namespace ModeladoDeObjetos
             Atuendos = atuendos.ToList();
 
             return atuendos;
+        }
+        public void AgregarPrenda(Prenda prenda)
+        {
+            Prendas.Add(prenda);
+        }
+        public List<Prenda> ObtenerPrendas()
+        {
+            return Prendas;
         }
     }
 }
