@@ -21,5 +21,8 @@ namespace ModeladoDeObjetos
         {
             Guardarropas.Add(unGuardarropa);
         }
+
+        //TODO Crear clase strategy para Premium/Gratis.
+        //TODO agregar metodo AgregarPrenda(Prenda, Guardarropa).
     }
 }
