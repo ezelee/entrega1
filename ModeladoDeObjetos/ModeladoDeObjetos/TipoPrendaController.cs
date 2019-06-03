@@ -9,9 +9,9 @@ namespace ModeladoDeObjetos
     {
         private List<TipoPrenda> TipoPrendas { get; set; } = new List<TipoPrenda>();
 
-        public bool ValidarColorYTela(String descripcion, String tela, String colorPrimario, String colorSecundario = null)
+        public bool ValidarColorYTela(String descripcion, String tela, String colorPrimario, String colorSecundario = null )
         {
-            TipoPrenda unTipo;
+           TipoPrenda unTipo;
 
             unTipo = TipoPrendas.Find(unTipoPrenda => unTipoPrenda.EsDeDescripcion(descripcion));
 
@@ -37,6 +37,7 @@ namespace ModeladoDeObjetos
         public void LevantarJson()
         {
             var path = @"C:\Users\eze\Desktop\tipoPrenda2.json";
+          //  var path = "tipoPrenda.json";
             List<TipoPrenda> tipoPrendas = new List<TipoPrenda>();
 
             var json = System.IO.File.ReadAllText(path);

@@ -17,6 +17,8 @@ namespace ModeladoDeObjetos
             List<Prenda> accesorios = Prendas.FindAll(p => p.EsDeCategoria("accesorio"));
             List<Prenda> calzados = Prendas.FindAll(p => p.EsDeCategoria("calzado"));
 
+            
+
             foreach (Prenda unaPrendaSuperior in partesSuperiores)
             {
                 foreach (Prenda unaPrendaInferior in partesInferiores)
